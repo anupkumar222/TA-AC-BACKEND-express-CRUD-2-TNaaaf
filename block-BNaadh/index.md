@@ -8,4 +8,3 @@ Q. write express generator command with varying options to generate express app 
 - express app with sass support for styling.
 - ejs as template engine and sass for styling
 - pug as template engine and gitignore together
-//things to understand
