@@ -7,6 +7,8 @@ var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var articleRouter = require('./routes/articles');
+const comments = require('./models/Comments');
+var commentsRouter = require('./routes/comments')
 
 //connect to database
 mongoose.connect("mongodb://localhost/blog", {
@@ -30,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/articles', articleRouter);
+app.use('/comments', commentsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

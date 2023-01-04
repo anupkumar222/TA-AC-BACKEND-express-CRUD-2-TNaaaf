@@ -24,6 +24,29 @@
        <a href="/articles/<%= article.id %>/delete">
         <button>Delete</button>
        </a>
+       <div>
+        <form action="/articles/<%= article._id %>/comments" method="POST">
+            <textarea name="text" rows="2" placeholder="Add Comment"></textarea>
+            <input type="text" name="author", placeholder="Author">
+            <input type="submit" value="Add Comment">
+        </form>
+       </div>
+       <div>
+        <h2>Comments</h2>
+        <hr>
+        <% article.comments.forEach(comment => { %>
+            <div>
+                <p><%= comment.text %></p>
+                <p><%= comment.author %></p>
+                <a href="/comments/<%= comment._id %>/edit">
+                    <button>Edit</button>
+                </a>
+                <a href="/comments/<%= comment._id %>/delete">
+                    <button>Delete</button>
+            </a>
+            </div>
+       <% }) %>
+       </div>
     </div>
 </body>
 </html>
